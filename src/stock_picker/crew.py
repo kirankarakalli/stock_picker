@@ -1,48 +1,81 @@
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
+
+from crewai import Agent,Crew,Process,Task
+from crewai.project import CrewBase,agent,crew,task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 
 
 @CrewBase
 class StockPicker():
-    """StockPicker crew"""
+    """ Stock Picker Crew """
 
-    agents: list[BaseAgent]
-    tasks: list[Task]
+    agents:list[BaseAgent]
+    tasks:list[Task]
 
     @agent
-    def researcher(self) -> Agent:
+    def market_analyst(self)->Agent:
+
         return Agent(
-            config=self.agents_config['researcher'], # type: ignore[index]
+            config=self.agents_config['market_analyst'],
+            verbose=True
+        )
+
+
+    @agent
+    def risk_analyst(self)->Agent:
+
+        return Agent(
+            config=self.agents_config['risk_analyst'],
             verbose=True
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def stock_picker(self)->Agent:
+
         return Agent(
-            config=self.agents_config['reporting_analyst'], # type: ignore[index]
+            config=self.agents_config['stock_picker'],
             verbose=True
         )
 
     @task
-    def research_task(self) -> Task:
+    def market_analyst_task(self)->Task:
+
         return Task(
-            config=self.tasks_config['research_task'], # type: ignore[index]
+            config=self.tasks_config['market_analyst_task']
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def risk_analysis_task(self)->Task:
+
         return Task(
-            config=self.tasks_config['reporting_task'], # type: ignore[index]
-            output_file='report.md'
+            config=self.tasks_config['risk_analysis_task']
+        )
+    
+    @task
+    def stock_picker_task(self)->Task:
+
+        return Task(
+            config=self.tasks_config['stock_picker_task'],
+            output_file='stock_report.md'
         )
 
     @crew
-    def crew(self) -> Crew:
-        """Creates the StockPicker crew"""
+    def crew(self)->Crew:
+        """creates stock picker Crew"""
+
         return Crew(
             agents=self.agents,
             tasks=self.tasks,
             process=Process.sequential,
-            verbose=True,
+            verbose=True
         )
+
+    
+
+
+
+
+
+
+
+
+
