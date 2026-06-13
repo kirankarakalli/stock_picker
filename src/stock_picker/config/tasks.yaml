@@ -1,0 +1,35 @@
+market_analyst_task:
+  description: >
+    Analyze the stock fundamentals for {topic}.
+    Focus on current price, market cap, PE ratio, revenue growth,
+    profit margin, debt level, and analyst recommendation.
+    Explain which stocks look fundamentally strong and why.
+    
+  expected_output: >
+    A clear fundamental analysis for each stock in {topic}, including
+    strengths, weaknesses, and important missing data.
+
+  agent: market_analyst
+
+risk_analysis_task:
+  description: >
+    Review the market analysis and identify risks for each stock in {topic}.
+    Focus on overvaluation, high debt, weak growth, low margins,
+    volatility, and uncertainty.
+    
+  expected_output: >
+    A risk summary for each stock with risk level: LOW, MEDIUM, or HIGH.
+   
+  agent: risk_analyst
+
+stock_picker_task:
+  description: >
+    Create a final ranked stock watchlist for {topic} using the market
+    analysis and risk analysis. Do not give direct buy or sell advice.
+  
+  expected_output: >
+    A markdown report with ranked stocks, reason for ranking, risk level,
+    and final educational conclusion.
+
+  agent: stock_picker
+
