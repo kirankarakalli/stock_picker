@@ -1,5 +1,6 @@
-from src.stock_picker.tools.custom_tool import StockDataTool
+import yfinance as yf
 
-tool = StockDataTool()
+stock = yf.Ticker("AAPL")
+news = stock.news
 
-print(tool.run(ticker="AAPL"))
+print(news[0])

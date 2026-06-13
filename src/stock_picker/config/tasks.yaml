@@ -12,6 +12,18 @@ market_analyst_task:
 
   agent: market_analyst
 
+news_analysis_task:
+  description: >
+    Use the News Data Tool to fetch recent news for each stock.
+    Summarize positive signals, negative signals, and overall sentiment.
+    Use only the news returned by the tool.
+  expected_output: >
+    A news and sentiment summary for each stock, including positive signals,
+    negative signals, and uncertainty.
+  agent: news_analyst
+  context:
+    - market_analyst_task
+
 risk_analysis_task:
   description: >
     Review the market analysis produced by the market analyst.
@@ -22,6 +34,7 @@ risk_analysis_task:
   agent: risk_analyst
   context:
     - market_analyst_task
+    - news_analysis_task
 
 stock_picker_task:
   description: >
@@ -33,5 +46,6 @@ stock_picker_task:
   agent: stock_picker
   context:
     - market_analyst_task
+    - news_analysis_task
     - risk_analysis_task
 

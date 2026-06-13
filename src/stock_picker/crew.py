@@ -2,7 +2,7 @@ from crewai import Agent,Crew,Process,Task, tools
 from crewai.project import CrewBase,agent,crew,task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from stock_picker.tools.custom_tool import StockDataTool
-
+from stock_picker.tools.news_tool import NewsDataTool
 
 
 @CrewBase
@@ -18,6 +18,16 @@ class StockPicker():
         return Agent(
             config=self.agents_config['market_analyst'],
             tools=[StockDataTool()],
+            verbose=True
+        )
+    
+    
+    @agent
+    def news_analyst(self)->Agent:
+
+        return Agent(
+            config=self.agents_config['news_analyst'],
+            tools=[NewsDataTool()],
             verbose=True
         )
 
@@ -44,6 +54,14 @@ class StockPicker():
         return Task(
             config=self.tasks_config['market_analyst_task']
         )
+
+    @task
+    def news_analysis_task(self)->Task:
+
+        return Task(
+            config=self.tasks_config['news_analysis_task']
+        )
+
 
     @task
     def risk_analysis_task(self)->Task:
