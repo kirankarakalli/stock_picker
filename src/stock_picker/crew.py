@@ -1,7 +1,8 @@
-
-from crewai import Agent,Crew,Process,Task
+from crewai import Agent,Crew,Process,Task, tools
 from crewai.project import CrewBase,agent,crew,task
 from crewai.agents.agent_builder.base_agent import BaseAgent
+from stock_picker.tools.custom_tool import StockDataTool
+
 
 
 @CrewBase
@@ -16,6 +17,7 @@ class StockPicker():
 
         return Agent(
             config=self.agents_config['market_analyst'],
+            tools=[StockDataTool()],
             verbose=True
         )
 

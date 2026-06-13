@@ -13,8 +13,11 @@ def run():
     """
     Run the crew.
     """
+    tickers = sys.argv[1:]
+    if not tickers:
+        tickers = ["AAPL", "MSFT", "NVDA", "GOOGL", "META"]
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': ", ".join(tickers),
         'current_year': str(datetime.now().year)
     }
 
@@ -79,7 +82,7 @@ def run_with_trigger():
 
     inputs = {
         "crewai_trigger_payload": trigger_payload,
-        "topic": "",
+        "topic": "AAPL, MSFT, NVDA, GOOGL, META",
         "current_year": ""
     }
 
