@@ -1,54 +1,226 @@
-# StockPicker Crew
+#  CrewAI Stock Picker
 
-Welcome to the StockPicker Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An AI-powered Stock Picker application built using **CrewAI**, **yFinance**, and **Streamlit**. The system uses multiple AI agents and custom tools to analyze stock fundamentals, recent news, risk factors, and generate a ranked stock watchlist.
+
+---
+
+## Features
+
+### Multi-Agent Workflow
+
+* Market Analyst Agent
+* News Analyst Agent
+* Risk Analyst Agent
+* Stock Picker Agent
+
+### Custom Tools
+
+* Stock Data Tool
+
+  * Current Price
+  * Market Cap
+  * PE Ratio
+  * Revenue Growth
+  * Profit Margin
+  * Debt-to-Equity Ratio
+  * Analyst Recommendation
+
+* News Data Tool
+
+  * Latest stock-related news
+  * Publisher information
+  * News summaries
+  * Publication dates
+
+* Stock Scoring Tool
+
+  * Growth Score
+  * Margin Score
+  * Valuation Score
+  * Debt Score
+  * Final Composite Score
+
+### Dashboard
+
+* Streamlit UI
+* Enter custom stock tickers
+* Generate ranked watchlist reports
+* Interactive stock price charts
+* Multiple chart periods:
+
+  * 1 Month
+  * 6 Months
+  * 1 Year
+  * 5 Years
+
+---
+
+##  Architecture
+
+```text
+User Input (Tickers)
+          │
+          ▼
+ ┌─────────────────┐
+ │ StockDataTool   │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ Market Analyst  │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ NewsDataTool    │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ News Analyst    │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ Risk Analyst    │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ Scoring Tool    │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ Stock Picker    │
+ └─────────────────┘
+          │
+          ▼
+ Ranked Stock Report
+```
+
+---
+
+## Tech Stack
+
+### AI & Agents
+
+* CrewAI
+* OpenAI
+
+### Data Sources
+
+* yFinance
+
+### Frontend
+
+* Streamlit
+
+### Backend
+
+* Python
+
+---
+
+## Stock Scoring Methodology
+
+Stocks are scored using four key factors:
+
+| Metric         | Weight |
+| -------------- | ------ |
+| Revenue Growth | 30%    |
+| Profit Margin  | 30%    |
+| PE Ratio       | 20%    |
+| Debt-to-Equity | 20%    |
+
+Final ranking is based on the combined score and risk analysis.
+
+---
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-First, if you haven't already, install uv:
+Clone the repository:
 
 ```bash
-pip install uv
+git clone https://github.com/kirankarakalli/stock_picker.git
+cd stock_picker
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/stock_picker/config/agents.yaml` to define your agents
-- Modify `src/stock_picker/config/tasks.yaml` to define your tasks
-- Modify `src/stock_picker/crew.py` to add your own logic, tools and specific args
-- Modify `src/stock_picker/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+Install dependencies:
 
 ```bash
-$ crewai run
+uv sync
 ```
 
-This command initializes the stock_picker Crew, assembling the agents and assigning them tasks as defined in your configuration.
+---
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## Run CrewAI
 
-## Understanding Your Crew
+```bash
+uv run run_crew AAPL MSFT TSLA
+```
 
-The stock_picker Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+Example:
 
-## Support
+```bash
+uv run run_crew NVDA AAPL MSFT
+```
 
-For support, questions, or feedback regarding the StockPicker Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+---
 
-Let's create wonders together with the power and simplicity of crewAI.
+## Run Streamlit Dashboard
+
+```bash
+uv run streamlit run app.py
+```
+
+Open the URL shown in the terminal.
+
+---
+
+## Example Tickers
+
+### US Stocks
+
+```text
+AAPL
+MSFT
+NVDA
+TSLA
+META
+GOOGL
+AMD
+```
+
+### Indian Stocks
+
+```text
+TCS.NS
+INFY.NS
+RELIANCE.NS
+HDFCBANK.NS
+ICICIBANK.NS
+```
+
+---
+
+##  Sample Output
+
+The system generates:
+
+* Ranked Stock Watchlist
+* Fundamental Analysis
+* News Analysis
+* Risk Assessment
+* Stock Scores
+* Educational Conclusion
+
+---
+
+
+
+👨‍💻 Author
+
+Kiran Karakalli
+
+Built to learn Agentic AI, CrewAI, Multi-Agent Systems, Financial Data Analysis, and Streamlit Application Development.
