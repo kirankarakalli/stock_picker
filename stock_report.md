@@ -1,29 +1,29 @@
-Ranked Stock Watchlist for AAPL, MSFT, TSLA:
+Ranked Stock Watchlist:
 
 1. Microsoft Corporation (MSFT)
-- Score: 83.3
-- Ranking: #1
-- Reason for Ranking: MSFT ranks highest due to its strong growth score (18.3), superior profit margin (30), reasonable valuation score (20), and manageable debt level (15). The company benefits from robust AI and cloud investments highlighted in the news, low risk profile, and strong analyst buy recommendations. Its low overall risk level and well-rounded fundamentals make it the top watchlist pick.
-- Risk Level: LOW
-- Final Conclusion: Microsoft shows excellent balance across growth, profitability, valuation, and risk, making it the most attractive stock for monitoring.
+   - Score: 83.3
+   - Ranking: #1
+   - Reason for Ranking: Microsoft leads with the highest score due to its robust revenue growth, very high profit margin, reasonable valuation, and low debt levels. The company's strong position in AI and cloud computing, supported by positive news and analyst "strong buy" ratings, enhances its outlook. Microsoft demonstrates a balanced and low-risk profile, making it the top-ranked stock among the three.
+   - Risk Level: Low
+   - Final Conclusion: Microsoft stands out as the most fundamentally sound, profitable, and least risky stock with strong growth prospects and solid market confidence.
 
 2. Apple Inc. (AAPL)
-- Score: 68.75
-- Ranking: #2
-- Reason for Ranking: Apple scores well with solid growth (16.6) and very strong profit margin (27.15). However, its moderately high valuation and elevated debt reduce its overall score. Positive sentiment from high-profile investors and strategic asset involvement support the bullish case, though the medium risk level reflects caution around leverage and stretched valuation.
-- Risk Level: MEDIUM
-- Final Conclusion: Apple is a strong contender with good fundamentals and positive news but carries some caution due to higher debt and valuation risk.
+   - Score: 68.75
+   - Ranking: #2
+   - Reason for Ranking: Apple scores well due to solid growth and profitability. It benefits from strong market sentiment, strategic partnerships, and billionaire endorsements. However, its higher debt ratio and medium valuation risk weigh on its score. Apple’s risk mainly stems from its significant leverage, which could impact financial flexibility in tough conditions.
+   - Risk Level: Medium to High
+   - Final Conclusion: Apple remains a strong company with good financial performance and investor backing but carries higher risk due to leverage and moderate valuation concerns compared to Microsoft.
 
 3. Tesla, Inc. (TSLA)
-- Score: 44.75
-- Ranking: #3
-- Reason for Ranking: Tesla's score is the lowest, impacted by its modest growth (15.8), very low profit margin (3.95), and very high valuation risk (5). While its debt is low (20), the overall risk level is high due to overvaluation and uncertainty around growth sustainability. Despite positive sentiment linked to Musk's ventures, Tesla's fundamentals suggest higher risk.
-- Risk Level: HIGH
-- Final Conclusion: Tesla presents a risky profile driven by elevated valuation and poor profitability metrics. It ranks lowest and should be monitored more cautiously.
+   - Score: 44.75
+   - Ranking: #3
+   - Reason for Ranking: Tesla's score is the lowest due to its exceptionally high valuation risk, low profit margin, and medium growth risk despite having the lowest debt risk. Positive investor sentiment linked to Elon Musk and Tesla’s growth potential is offset by high market expectations and competitive pressures. The risk profile is elevated by thin profitability and valuation concerns.
+   - Risk Level: High
+   - Final Conclusion: Tesla is a high-risk, high-growth stock trading at stretched valuations with uncertain profitability. It ranks third due to elevated risks, though it remains an important watchlist candidate for growth-oriented research.
 
 Summary:
-- Microsoft leads the watchlist with the best combination of growth, profitability, valuation, and low risk.
-- Apple follows, with strong fundamentals but medium risk primarily from its debt and valuation.
-- Tesla ranks last due to high valuation risk and weak profitability, reflecting the highest risk among the three.
+- Microsoft (Rank 1) is preferred for balanced growth, strong profitability, and low risk.
+- Apple (Rank 2) is a solid choice with strong fundamentals but higher debt risk.
+- Tesla (Rank 3) shows growth promise but carries significant valuation and profitability risks.
 
-This watchlist ranking balances quantitative scores with qualitative risk and news analysis for educational research purposes.
+This watchlist reflects a combination of fundamental scores, news sentiment, and risk factors for educational research purposes.
