@@ -1,6 +1,8 @@
-import yfinance as yf
+from stock_picker.tools.scoring_tool import StockScoringTool
 
-stock = yf.Ticker("AAPL")
-news = stock.news
+tool = StockScoringTool()
 
-print(news[0])
+result = tool.run(ticker="AAPL")
+
+print(result)
+

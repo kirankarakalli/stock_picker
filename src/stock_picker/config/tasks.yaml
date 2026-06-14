@@ -38,10 +38,18 @@ risk_analysis_task:
 
 stock_picker_task:
   description: >
-    Create a ranked watchlist using the market analysis and risk analysis.
+    Use the Stock Scoring Tool to calculate scores for each stock.
+    Combine market analysis, news analysis, risk analysis,
+    and stock scores to create a ranked watchlist.
+
+    Higher scores should generally rank higher.
   expected_output: >
-    A markdown report with ranked stocks, reason for ranking, risk level,
-    and final educational conclusion.
+    A ranked stock watchlist including:
+    - score
+    - ranking
+    - reason for ranking
+    - risk level
+    - final conclusion
 
   agent: stock_picker
   context:

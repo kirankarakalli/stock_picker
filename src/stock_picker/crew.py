@@ -3,6 +3,7 @@ from crewai.project import CrewBase,agent,crew,task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from stock_picker.tools.custom_tool import StockDataTool
 from stock_picker.tools.news_tool import NewsDataTool
+from stock_picker.tools.scoring_tool import StockScoringTool
 
 
 @CrewBase
@@ -45,6 +46,7 @@ class StockPicker():
 
         return Agent(
             config=self.agents_config['stock_picker'],
+            tools=[StockScoringTool()],
             verbose=True
         )
 
